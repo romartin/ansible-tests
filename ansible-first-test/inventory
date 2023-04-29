@@ -1,0 +1,6 @@
+[mynodes]
+172.17.0.2
+
+[mynodes:vars]
+ansible_ssh_user=pythonssh
+ansible_ssh_pass=sshpass
