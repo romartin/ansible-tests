@@ -15,3 +15,7 @@ ansible all -m shell -a "uname -a"
 
 // Playbooks
 ansible-playbook ping-playbook.yml
+
+// Modules
+ansible-doc -l // to see the list of available modules.
+ansible-doc <module_name>

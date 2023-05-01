@@ -1,5 +1,0 @@
-- hosts: mynodes
-  become: no
-  tasks:
-    - name: ping-nodes
-      ping:
