@@ -1,0 +1,26 @@
+{
+  "id": "ansiblecallplaybook",
+  "version": "1.0",
+  "specVersion": "0.8",
+  "name": "Ansible Call Playbook",
+  "description": "Ansible Call Playbook",
+  "start": "Call Playbook",
+  "states": [
+    {
+      "name": "Call Playbook",
+      "type": "operation",
+      "actions": [
+        {
+          "functionRef": {
+            "refName": "ansible:playbook",
+            "arguments": {
+              "name": "playbooks/playbook.yaml",
+              "args": "-i mywebservers"
+            }
+          }
+        }
+      ],
+      "end": true
+    }
+  ]
+}

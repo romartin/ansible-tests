@@ -7,3 +7,7 @@
     - name: Print message
       ansible.builtin.debug:
         msg: Hello world
+    - name: import a playbook
+      ansible.builtin.import_playbook: playbook_name.yml
+    - import_playbook: playbook_name.yml
+      
