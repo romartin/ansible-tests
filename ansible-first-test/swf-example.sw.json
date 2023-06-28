@@ -1,18 +1,44 @@
 {
-  "id": "helloworld",
-  "version": "1.0",
+  "id": "Workflow unique identifier",
+  "version": "0.1",
   "specVersion": "0.8",
-  "name": "Hello World Workflow",
-  "description": "Inject Hello World",
-  "start": "Hello State",
+  "name": "Workflow name",
+  "description": "Workflow description",
+  "start": "Call Playbook",
+  "functions": [
+    {
+      "name": "uniqueFunctionName",
+      "operation": "localhost#operation",
+      "type": "rest"
+    }
+  ],
+  "events": [
+    {
+      "name": "Unique event name",
+      "source": "CloudEvent source",
+      "type": "CloudEvent type"
+    }
+  ],
   "states": [
     {
-      "name": "Hello State",
-      "type": "inject",
-      "data": {
-        "result": "Hello World!"
+      "name": "Call Playbook",
+      "type": "operation",
+      "metadata": {
+        "type": "ansible"
       },
-      "end": true
+      "actions": [
+        {
+          "name": "call_some_playbook",
+          "functionRef": {
+            "refName": "uniqueFunctionName",
+            "arguments": {
+              "name": "playbook.yml",
+              "args": "-i stdio"
+            }
+          }
+        }
+      ],
+      "end": false
     }
   ]
 }
